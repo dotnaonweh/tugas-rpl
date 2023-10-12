@@ -122,26 +122,29 @@ def cekKuponTp():
     print("Jumlah kupon Anda adalah: 0 Kupon")
 
 def main():
-    print("\nMau Samsung Fold 4 dr Aldi Taher?\nHub di *500*352#\n1. Transfer Pulsa\n2. Minta Pulsa\n3. Auto TP\n4. Delete Auto TP\n5. List Auto TP\n6. Cek Kupon Undian TP\n")
-    choose = int(input("Pilih Menu > "))
-    if choose == 1:
-        transferPulsa(userPulsa)
-    elif choose == 2:
-        mintaPulsa()
-    elif choose == 3:
-        autoTp(userPulsa,userInputList)
-    elif choose == 4:
-        deleteAutoTp(listNoAutoTp)
-    elif choose == 5:
-        listAutoTp()
-    elif choose == 6:
-        cekKuponTp()
+    inputLayanan = input("> ")
+    if inputLayanan == "*858#":
+        print("\nMau Samsung Fold 4 dr Aldi Taher?\nHub di *500*352#\n1. Transfer Pulsa\n2. Minta Pulsa\n3. Auto TP\n4. Delete Auto TP\n5. List Auto TP\n6. Cek Kupon Undian TP\n")
+        choose = int(input("> "))
+        if choose == 1:
+            transferPulsa(userPulsa)
+        elif choose == 2:
+            mintaPulsa()
+        elif choose == 3:
+            autoTp(userPulsa,userInputList)
+        elif choose == 4:
+            deleteAutoTp(listNoAutoTp)
+        elif choose == 5:
+            listAutoTp()
+        elif choose == 6:
+            cekKuponTp()
+        else:
+            print("Angka yang anda masukan salah!")
+            main()
     else:
-        print("Angka yang anda masukan salah!")
-        main()
+        print("Layanan Tidak Tersedia")
 
 if __name__ == "__main__":
-    # Tugas RPL Week #3 Kelompok 5
     listNoAutoTp = ['081316555666']
     userInputList = {}
     userPulsa = 50000
